@@ -17,6 +17,8 @@ function loadPokemonItens(offset, limit) {
                     </ol>
                     <img src="${pokemon.photo}" alt="${pokemon.name}">
                 </div>
+
+                
             </li>
         `).join(``)
 
