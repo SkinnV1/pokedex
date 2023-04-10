@@ -127,6 +127,24 @@
     text-transform: capitalize;
 }
 
+.info{
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+}
+
+ol .statsName, .statsValue{
+    list-style: none;
+}
+
+.statsValue{
+
+}
+
+.statsName{
+    font-size: 1rem;
+    padding: 0;
+}
+
 .pagination{
     display: flex;
     flex-direction: row;

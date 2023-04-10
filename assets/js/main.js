@@ -18,7 +18,15 @@ function loadPokemonItens(offset, limit) {
                     <img src="${pokemon.photo}" alt="${pokemon.name}">
                 </div>
 
-                
+                <div class="info">
+                    <ol class="statsName">
+                        ${pokemon.statsName.map((stats) =>`<li class="stats">${stats}</li>`).join('')}
+                    </ol>
+                    <ol class="statsValue">
+                        ${pokemon.stat.map((stat) =>`<li class="statValue">${stat}</li>`).join('')}
+                    </ol>
+                    
+                </div>
             </li>
         `).join(``)
 
