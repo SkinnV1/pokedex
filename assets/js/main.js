@@ -1,34 +1,33 @@
 const pokemonOL = document.getElementById(`pokemonList`)
 const loadMoreButton = document.getElementById('loadMoreButton')
-const maxRecord = 151
+
+const maxRecord = 1279
 const limit = 12
 let offset = 0;
 
-function loadPokemonItens(offset, limit) {
+function loadPokemonItens() {
     pokeApi.getPokemons(offset, limit).then((pokemons = []) =>{
-            const newHTML = pokemons.map((pokemon) => `
-            <li class="pokemon ${pokemon.type}">
-                <span class="number">#${pokemon.number}</span>
-                <span class="name">${pokemon.name}</span>
+        const newHTML = pokemons.map((pokemon) => `
+        <li class="pokemon ${pokemon.type}">
+            <span class="number">#${pokemon.number}</span>
+            <span class="name">${pokemon.name}</span>
 
-                <div class="detail">
-                    <ol class="types">
-                        ${pokemon.types.map((type) =>`<li class="type ${type}">${type}</li>`).join('')}
-                    </ol>
-                    <img src="${pokemon.photo}" alt="${pokemon.name}">
-                </div>
+            <div class="detail">
+                <ol class="types">
+                    ${pokemon.types.map((type) =>`<li class="type ${type}">${type}</li>`).join('')}
+                </ol>
+                <img src="${pokemon.photo}" alt="${pokemon.name}">
+            </div>
 
-                <div class="info">
-                    <ol class="statsName">
-                        ${pokemon.statsName.map((stats) =>`<li class="stats">${stats}</li>`).join('')}
-                    </ol>
-                    <ol class="statsValue">
-                        ${pokemon.stat.map((stat) =>`<li class="statValue">${stat}</li>`).join('')}
-                    </ol>
-                    
-                </div>
-            </li>
-        `).join(``)
+        </li>
+    `).join(``)
+
+    const pokemonItens = document.querySelectorAll('.pokemon');
+    pokemonItens.forEach((item) => {
+        item.addEventListener('click',() => {
+            item.classList.toggle('active');
+        });
+    });
 
         pokemonOL.innerHTML += newHTML
     })

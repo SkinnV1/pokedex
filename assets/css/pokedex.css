@@ -128,8 +128,13 @@
 }
 
 .info{
-    display: grid;
-    grid-template-columns: 1.3fr 1fr;
+    display: flex;
+    justify-content: space-between;
+    background-color: yellow;
+    align-items: center;
+    height: 15vh;
+    position: absolute;
+    z-index: 2;
 }
 
 ol .statsName, .statsValue{
