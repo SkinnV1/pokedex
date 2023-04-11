@@ -1,7 +1,7 @@
 const pokemonOL = document.getElementById(`pokemonList`)
 const loadMoreButton = document.getElementById('loadMoreButton')
 const maxRecord = 151
-const limit = 5
+const limit = 12
 let offset = 0;
 
 function loadPokemonItens(offset, limit) {
@@ -33,6 +33,9 @@ function loadPokemonItens(offset, limit) {
         pokemonOL.innerHTML += newHTML
     })
 }
+
+
+
 
 loadPokemonItens(offset, limit)
 
